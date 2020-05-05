@@ -12,9 +12,13 @@ Rails.application.initialize!
     :authentication => :plain,
     :user_name => Rails.application.credentials.sendinblue[:username],
     :password => Rails.application.credentials.sendinblue[:password],
-    :domain => 'heroku.com',
+    :domain => 'rohit-photo-app.herokuapp.com',
     :enable_starttls_auto => true
   }
+  aws_s3:
+  access_key: AKIAXZGQZWZB4BCHUPOO
+  secret_key: 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
+  bucket: rails-saas-project
 # else
 #   ActionMailer::Base.smtp_settings = {
 #     # :address => 'smtp.sendgrid.net',

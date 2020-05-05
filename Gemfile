@@ -27,6 +27,7 @@ gem 'stripe'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+# gem 'sib-api-v3-sdk'
 # gem 'fog'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

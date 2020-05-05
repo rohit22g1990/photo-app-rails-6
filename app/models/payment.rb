@@ -11,7 +11,11 @@ class Payment < ApplicationRecord
   end
 
   def process_payment
-    Stripe.api_key = Rails.application.credentials.stripe[:stripe_test_secret_key]
+    if Rails.env.production?
+      Stripe.api_key = ENV['STRIPE_TEST_SECRET_KEY']
+    else
+      Stripe.api_key = Rails.application.credentials.stripe[:stripe_test_secret_key]
+    end
     customer = Stripe::Customer.create({ 
         email: email, 
         card: token,
@@ -25,8 +29,8 @@ class Payment < ApplicationRecord
         }
       })
     Stripe::Charge.create customer: customer.id,
-    amount: 1500,
-    description: 'Premium - Photo App-new',
+    amount: 3400,
+    description: 'Premium-ENV Changes',
     currency: 'usd'
   end
 end

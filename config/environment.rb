@@ -12,7 +12,7 @@ Rails.application.initialize!
     :authentication => :plain,
     :user_name => Rails.application.credentials.sendinblue[:username],
     :password => Rails.application.credentials.sendinblue[:password],
-    :domain => 'sendinblue.com',
+    :domain => 'heroku.com',
     :enable_starttls_auto => true
   }
 # else
